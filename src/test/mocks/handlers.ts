@@ -1,33 +1,33 @@
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
-    http.get('https://dummyjson.com/todos', () => {
-        return HttpResponse.json({
-            "todos": [
-                {
-                    "id": 1,
-                    "todo": "Do something nice for someone I care about",
-                    "completed": true,
-                    "userId": 26
-                },
-            ]
-        }, { status: 200 })
-    }),
+    // http.get('https://dummyjson.com/todos', () => {
+    //     return HttpResponse.json({
+    //         "todos": [
+    //             {
+    //                 "id": 1,
+    //                 "todo": "Do something nice for someone I care about",
+    //                 "completed": true,
+    //                 "userId": 26
+    //             },
+    //         ]
+    //     }, { status: 200 })
+    // }),
 
-    //---------------------------------------------------------------------
-    //json placeholder
-    http.get("https://jsonplaceholder.typicode.com/todos", () => {
-        return HttpResponse.json({
-            "todos": [
-                {
-                    "id": 1,
-                    "todo": "quis ut nam facilis et officia qui",
-                    "completed": true,
-                    "userId": 26
-                },
-            ]
-        }, { status: 200 })
-    }),
+    // //---------------------------------------------------------------------
+    // //json placeholder
+    // http.get("https://jsonplaceholder.typicode.com/todos", () => {
+    //     return HttpResponse.json({
+    //         "todos": [
+    //             {
+    //                 "id": 1,
+    //                 "todo": "quis ut nam facilis et officia qui",
+    //                 "completed": true,
+    //                 "userId": 26
+    //             },
+    //         ]
+    //     }, { status: 200 })
+    // }),
 
         //---------------------------------------------------------------------
     //json server
