@@ -35,8 +35,8 @@ function App() {
         {todos.length && <div>Todo List : {todos.length}</div>}
       </div> */}
       {/* <TodoList /> */}
-      {/* <PostList /> */}
-      <PostInput />
+      <PostList />
+      {/* <PostInput /> */}
     </>
   );
 }
