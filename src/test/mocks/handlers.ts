@@ -17,16 +17,10 @@ export const handlers = [
     //---------------------------------------------------------------------
     //json placeholder
     http.get("https://jsonplaceholder.typicode.com/todos", () => {
-        return HttpResponse.json({
-            "todos": [
-                {
-                    "id": 1,
-                    "todo": "quis ut nam facilis et officia qui",
-                    "completed": true,
-                    "userId": 26
-                },
-            ]
-        }, { status: 200 })
+        return HttpResponse.json([
+          { userId: 1, id: 1, title: 'Todo 1', completed: false },
+          { userId: 1, id: 2, title: 'Todo 2', completed: true },
+        ])
     }),
 
         //---------------------------------------------------------------------
@@ -47,42 +41,7 @@ export const handlers = [
                     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
                   }
                 ],
-                "status": 200,
-                "statusText": "OK",
-                "headers": {
-                  "content-length": "23509",
-                  "content-type": "application/json"
-                },
-                "config": {
-                  "transitional": {
-                    "silentJSONParsing": true,
-                    "forcedJSONParsing": true,
-                    "clarifyTimeoutError": false
-                  },
-                  "adapter": [
-                    "xhr",
-                    "http"
-                  ],
-                  "transformRequest": [
-                    null
-                  ],
-                  "transformResponse": [
-                    null
-                  ],
-                  "timeout": 0,
-                  "xsrfCookieName": "XSRF-TOKEN",
-                  "xsrfHeaderName": "X-XSRF-TOKEN",
-                  "maxContentLength": -1,
-                  "maxBodyLength": -1,
-                  "env": {},
-                  "headers": {
-                    "Accept": "application/json, text/plain, */*"
-                  },
-                  "method": "get",
-                  "url": "http://localhost:4000/posts"
-                },
-                "request": {}
-        })
+        },{status:200})
     }),
 ]
 

@@ -1,6 +1,10 @@
 import { render, screen } from "../utils/test-utils";
 import TodoList from "../components/TodoList";
+import { server } from "./mocks/server";
 
+beforeAll(() => server.listen()); // Start the mock server before running tests
+afterEach(() => server.resetHandlers()); // Reset any request handlers that we may add in individual tests
+afterAll(() => server.close()); // Clean up after all tests are done
 describe("TodoList", () => {
   
   it("api success secnario on load", async () => {
@@ -27,9 +31,9 @@ describe("TodoList", () => {
     render(<TodoList />);
     expect(screen.getByText("-")).toBeInTheDocument();
   });
-  // it("Todo name", async () => {
-  //   render(<TodoList />);
-  //   expect(await screen.findByRole("quis ut nam facilis et officia qui")).toBeInTheDocument();
-  // });
+  it("Todo name", async () => {
+    render(<TodoList />);
+    expect(await screen.findByText("2")).toBeInTheDocument();
+  });
 });
 

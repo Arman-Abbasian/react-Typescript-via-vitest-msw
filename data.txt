@@ -1,0 +1,35 @@
+"status": 200,
+                "statusText": "OK",
+                "headers": {
+                  "content-length": "23509",
+                  "content-type": "application/json"
+                },
+                "config": {
+                  "transitional": {
+                    "silentJSONParsing": true,
+                    "forcedJSONParsing": true,
+                    "clarifyTimeoutError": false
+                  },
+                  "adapter": [
+                    "xhr",
+                    "http"
+                  ],
+                  "transformRequest": [
+                    null
+                  ],
+                  "transformResponse": [
+                    null
+                  ],
+                  "timeout": 0,
+                  "xsrfCookieName": "XSRF-TOKEN",
+                  "xsrfHeaderName": "X-XSRF-TOKEN",
+                  "maxContentLength": -1,
+                  "maxBodyLength": -1,
+                  "env": {},
+                  "headers": {
+                    "Accept": "application/json, text/plain, */*"
+                  },
+                  "method": "get",
+                  "url": "http://localhost:4000/posts"
+                },
+                "request": {}

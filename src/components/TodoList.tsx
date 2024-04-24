@@ -15,6 +15,7 @@ function TodoList() {
         async function fetchTodos(){
             try {
                 const {data}=await axios.get("https://jsonplaceholder.typicode.com/todos");
+                console.log(data)
                 setTodos(data)
             } catch (error) {
                 console.log(error)
@@ -37,6 +38,7 @@ function TodoList() {
             <p>{count}</p>
             <button onClick={increaseHandler}>+</button>
         </div>
+        <p>{todos.length}</p>
        {todos.length>0&&todos.map((item)=>{
         return <div style={{backgroundColor:"blue"}}>
             <p>{item.title}</p>
