@@ -82,7 +82,7 @@ export const handlers = [
                   "url": "http://localhost:4000/posts"
                 },
                 "request": {}
-        }, { status: 200 })
+        })
     }),
 ]
 
