@@ -12,8 +12,8 @@ describe("Post list test", () => {
       render(<PostList />);
       expect(await screen.findByText("2")).toBeInTheDocument();
     });
-    // it("Todo name", async () => {
-    //   render(<PostList />);
-    //   expect(await screen.findByText("qui est esse")).toBeInTheDocument();
-    // });
+    it("Todo name", async () => {
+      render(<PostList />);
+      expect(await screen.findByText("qui est esse")).toBeInTheDocument();
+    });
   });

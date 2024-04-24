@@ -31,9 +31,13 @@ describe("TodoList", () => {
     render(<TodoList />);
     expect(screen.getByText("-")).toBeInTheDocument();
   });
-  it("Todo name", async () => {
+  it("length of todo in TodoList", async () => {
     render(<TodoList />);
     expect(await screen.findByText("2")).toBeInTheDocument();
+  });
+  it("Todo 2 rendered in p element", async () => {
+    render(<TodoList />);
+    expect(await screen.findByText("Todo 2")).toBeInTheDocument();
   });
 });
 

@@ -26,8 +26,8 @@ export const handlers = [
         //---------------------------------------------------------------------
     //json server
     http.get("http://localhost:4000/posts", () => {
-        return HttpResponse.json({
-                "data": [
+        return HttpResponse.json(
+                 [
                   {
                     "userId": 1,
                     "id": "1",
@@ -40,8 +40,7 @@ export const handlers = [
                     "title": "qui est esse",
                     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
                   }
-                ],
-        },{status:200})
+                ])
     }),
 ]
 
