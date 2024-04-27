@@ -14,7 +14,7 @@ setFormVal({...formVal,[e.target.name]:e.target.value})
     }
     const submitHandler=(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
-        axios.post("http://localhost:4000/posts",{...formVal,id:(new Date().getTime()).toString()}).then((res)=>console.log(res.data)).catch((err)=>console.log(err))
+        axios.post("http://localhost:4000/posts",{...formVal,userId:Number(formVal.userId),id:(new Date().getTime()).toString()}).then((res)=>console.log(res.data)).catch((err)=>console.log(err))
         console.log(formVal)
     }
   return (
@@ -29,8 +29,8 @@ setFormVal({...formVal,[e.target.name]:e.target.value})
             <input type="text" name="body" value={formVal.body} onChange={changeHandler} id="body" />
             </div>
             <div>
-            <label htmlFor="body">userId</label>
-            <input type="number" name="userId" value={formVal.userId} onChange={changeHandler} id="body" />
+            <label htmlFor="userId">userId</label>
+            <input type="number" name="userId" value={formVal.userId} onChange={changeHandler} id="userId" />
             </div>
             <input type="submit"  value="Add" />
         </form>
