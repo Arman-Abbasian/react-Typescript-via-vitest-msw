@@ -11,7 +11,6 @@ function PostList() {
     const [posts,setPosts]=useState<Post[]>([])
     useEffect(()=>{
         axios.get("http://localhost:4000/posts").then(res=>{
-            console.log(res)
             setPosts(res.data)
         }).catch(err=>console.log(err))
     },[])
@@ -25,5 +24,4 @@ function PostList() {
     </div>
   )
 }
-
 export default PostList
