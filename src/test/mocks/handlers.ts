@@ -11,7 +11,8 @@ export const handlers = [
     }),
 
         //---------------------------------------------------------------------
-    //json server
+
+    //json server--GET
     http.get("http://localhost:4000/posts", () => {
         return HttpResponse.json([
                   {
@@ -26,6 +27,17 @@ export const handlers = [
                     "title": "qui est esse",
                     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
                   }
+                ])
+    }),
+    //json server--POST
+    http.post("http://localhost:4000/posts", () => {
+        return HttpResponse.json([
+                  {
+                    "userId": 1,
+                    "id": "3",
+                    "title": "post response",
+                    "body": "this is response when i post the data to json-server"
+                  },
                 ])
     }),
 ]
