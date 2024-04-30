@@ -6,15 +6,23 @@ interface FormValue{
     body:string,
     userId:number,
 }
+interface PostResponse{
+    id:string,
+    title:string,
+    body:string,
+    userId:number,
+}
 
 function PostInput() {
-    const [formVal,setFormVal]=useState<FormValue>({title:"",body:"",userId:0})
+    const [formVal,setFormVal]=useState<FormValue>({title:"",body:"",userId:0});
+    const [resData,setResData]=useState<null|PostResponse>(null)
     const changeHandler=(e:React.ChangeEvent<HTMLInputElement>)=>{
 setFormVal({...formVal,[e.target.name]:e.target.value})
     }
     const submitHandler=(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
-        axios.post("http://localhost:4000/posts",{...formVal,userId:Number(formVal.userId),id:(new Date().getTime()).toString()}).then((res)=>console.log(res.data)).catch((err)=>console.log(err))
+        axios.post("http://localhost:4000/posts",{...formVal,
+        userId:Number(formVal.userId),id:(new Date().getTime()).toString()}).then((res)=>setResData(res.data)).catch((err)=>console.log(err))
         console.log(formVal)
     }
   return (
@@ -34,6 +42,9 @@ setFormVal({...formVal,[e.target.name]:e.target.value})
             </div>
             <input type="submit"  value="Add" />
         </form>
+{resData && <div>
+    <p>{resData.body}</p>
+    </div>}
     </div>
   )
 }

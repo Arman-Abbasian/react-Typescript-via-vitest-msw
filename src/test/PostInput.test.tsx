@@ -18,15 +18,13 @@ describe('PostInput', () => {
       fireEvent.change(titleInput, { target: { value: 'Test Title' } });
       fireEvent.change(bodyInput, { target: { value: 'Test Body' } });
       expect(titleInput.value).toBe('Test Title');
-      expect(bodyInput.value).toBe('Test Body');
+      expect(bodyInput.value).toBe('Test Bodsy');
     });
   
     it('submits form with correct data', () => {
         render(<PostInput />)
-  
       fireEvent.change(titleInput, { target: { value: 'Test Title' } });
       fireEvent.change(bodyInput, { target: { value: 'Test Body' } });
       fireEvent.click(submitButton);
-  
     });
   });
