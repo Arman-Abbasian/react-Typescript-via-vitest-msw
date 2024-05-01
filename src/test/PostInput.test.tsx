@@ -1,4 +1,5 @@
 import PostInput from "../components/PostInput";
+import PostList from "../components/PostList";
 import { fireEvent, render, screen } from "../utils/test-utils";
 
 describe('PostInput', () => {
@@ -18,13 +19,15 @@ describe('PostInput', () => {
       fireEvent.change(titleInput, { target: { value: 'Test Title' } });
       fireEvent.change(bodyInput, { target: { value: 'Test Body' } });
       expect(titleInput.value).toBe('Test Title');
-      expect(bodyInput.value).toBe('Test Bodsy');
+      expect(bodyInput.value).toBe('Test Body');
     });
   
-    it('submits form with correct data', () => {
+    it('submits form with correct data', async() => {
         render(<PostInput />)
-      fireEvent.change(titleInput, { target: { value: 'Test Title' } });
-      fireEvent.change(bodyInput, { target: { value: 'Test Body' } });
+      fireEvent.change(titleInput, { target: { value: 'title' } });
+      fireEvent.change(bodyInput, { target: { value: 'body' } });
       fireEvent.click(submitButton);
+      render(<PostList />)
+      expect(await screen.findByText("title")).toBeInTheDocument();
     });
   });
