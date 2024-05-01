@@ -9,7 +9,7 @@ function App() {
     <>
       <h1>Vite + Vitest</h1>
       {/* <TodoList /> */}
-      {/* <PostList /> */}
+      <PostList />
       <PostInput />
     </>
   );

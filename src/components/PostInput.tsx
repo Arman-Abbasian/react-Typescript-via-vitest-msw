@@ -42,9 +42,6 @@ setFormVal({...formVal,[e.target.name]:e.target.value})
             </div>
             <input type="submit"  value="Add" />
         </form>
-{resData && <div>
-    <p>{resData.body}</p>
-    </div>}
     </div>
   )
 }
