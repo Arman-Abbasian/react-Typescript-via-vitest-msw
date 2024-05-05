@@ -1,6 +1,7 @@
 import "./App.css";
 import PostInput from "./components/PostInput";
 import PostList from "./components/PostList";
+import UserForm from "./components/Users/UserForm";
 
 
 function App() {
@@ -9,8 +10,9 @@ function App() {
     <>
       <h1>Vite + Vitest</h1>
       {/* <TodoList /> */}
-      <PostList />
-      <PostInput />
+      {/* <PostList /> */}
+      {/* <PostInput /> */}
+      
     </>
   );
 }

@@ -27,7 +27,7 @@ describe('PostInput', () => {
       fireEvent.change(titleInput, { target: { value: 'title' } });
       fireEvent.change(bodyInput, { target: { value: 'body' } });
       fireEvent.click(submitButton);
-      render(<PostList />)
+      render(<PostList  />)
       expect(await screen.findByText("title")).toBeInTheDocument();
     });
   });
