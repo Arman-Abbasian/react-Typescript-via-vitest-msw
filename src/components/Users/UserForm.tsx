@@ -1,13 +1,12 @@
-import axios from "axios"
 import { useState } from "react"
 
-interface FormValue{
+export interface FormValue{
     name:string,
     lastName:string,
     age:number,
 }
 type UserInputProps={
-    sendData:(formVal:FormValue)=>void
+    sendData:(formData:FormValue)=>void
 }
 
 function UserForm(props:UserInputProps) {
