@@ -1,6 +1,6 @@
 
 import UserList from "../../components/Users/UserList";
-import { fireEvent, render, screen } from "../../utils/test-utils";
+import { findByText, fireEvent, render, screen, waitFor } from "../../utils/test-utils";
 
 describe('User list', () => {
   render(<UserList />)
@@ -10,4 +10,23 @@ describe('User list', () => {
       expect(numOfUsers).toBeInTheDocument();
     });
 
+    it('renders form elements correctly', async() => {
+        render(<UserList />)  
+
+        const nameInput= screen.getByLabelText('name') as HTMLParagraphElement
+        const lastNameInput= screen.getByLabelText('lastName') as HTMLParagraphElement
+        const ageInput= screen.getByLabelText('age') as HTMLParagraphElement
+        const submitButton=screen.getByText('Add') as HTMLButtonElement
+          // Fill out the form
+        fireEvent.change(nameInput, { target: { value: 'John' } });
+        fireEvent.change(lastNameInput, { target: { value: 'Doe' } });
+        fireEvent.change(ageInput, { target: { value: '30' } });
+        // Submit the form
+        fireEvent.click(submitButton);
+        await waitFor(() => expect(screen.findByText('number of users 1')).toBeInTheDocument());
+      });
+
   });
+
+
+
