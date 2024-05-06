@@ -1,6 +1,6 @@
 
 import UserList from "../../components/Users/UserList";
-import { findByText, fireEvent, render, screen, waitFor } from "../../utils/test-utils";
+import {fireEvent, render, screen } from "../../utils/test-utils";
 
 describe('User list', () => {
   render(<UserList />)
@@ -12,7 +12,6 @@ describe('User list', () => {
 
     it('renders form elements correctly', () => {
         render(<UserList />)  
-
         const nameInput= screen.getByLabelText('name') as HTMLParagraphElement
         const lastNameInput= screen.getByLabelText('lastName') as HTMLParagraphElement
         const ageInput= screen.getByLabelText('age') as HTMLParagraphElement
@@ -29,7 +28,6 @@ describe('User list', () => {
         fireEvent.click(submitButton);
         expect(screen.getByText('number of users 1')).toBeInTheDocument();
       });
-
   });
 
 
