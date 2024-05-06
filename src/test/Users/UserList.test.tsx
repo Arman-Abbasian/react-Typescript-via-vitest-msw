@@ -10,20 +10,24 @@ describe('User list', () => {
       expect(numOfUsers).toBeInTheDocument();
     });
 
-    it('renders form elements correctly', async() => {
+    it('renders form elements correctly', () => {
         render(<UserList />)  
 
         const nameInput= screen.getByLabelText('name') as HTMLParagraphElement
         const lastNameInput= screen.getByLabelText('lastName') as HTMLParagraphElement
         const ageInput= screen.getByLabelText('age') as HTMLParagraphElement
         const submitButton=screen.getByText('Add') as HTMLButtonElement
+        expect(nameInput).toBeInTheDocument();
+        expect(lastNameInput).toBeInTheDocument();
+        expect(ageInput).toBeInTheDocument();
+        expect(submitButton).toBeInTheDocument();
           // Fill out the form
         fireEvent.change(nameInput, { target: { value: 'John' } });
         fireEvent.change(lastNameInput, { target: { value: 'Doe' } });
         fireEvent.change(ageInput, { target: { value: '30' } });
         // Submit the form
         fireEvent.click(submitButton);
-        await waitFor(() => expect(screen.findByText('number of users 1')).toBeInTheDocument());
+        expect(screen.getByText('number of users 1')).toBeInTheDocument();
       });
 
   });
