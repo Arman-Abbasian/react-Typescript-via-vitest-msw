@@ -1,18 +1,21 @@
 import { useState } from 'react'
 import UserForm, { FormValue } from './UserForm'
 
-export interface FormData extends FormValue & id:string;
+type FormData={
+id:string,
+}&FormValue
 
 function UserList() {
     const [users,setUsers]=useState<FormData[]>([])
     const addUser=(formData:FormValue)=>{
-        setUsers({...formData,id:"10"})
+        setUsers([...users,{...formData,id:"10"}])
     }
   return (
     <div>
+      <h1>number of users {users.length}</h1>
         <UserForm sendData={addUser} />
     </div>
   )
-}
+};
 
 export default UserList
