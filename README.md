@@ -1,4 +1,4 @@
-# Vitest in React + Typescript
+# Vitest+MSW in React + Typescript
 
 test the React Typescript app with vitest and MSW
 
